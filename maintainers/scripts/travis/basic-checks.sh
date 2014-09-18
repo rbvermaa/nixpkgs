@@ -5,6 +5,6 @@ bash <(curl https://nixos.org/nix/install)
 source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 echo "Building tarball"
-nix-build -A tarball
+nix-build -A tarball $(dirname $(readlink -f $0))/../../../top-level/release.nix
 
 
